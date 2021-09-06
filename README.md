@@ -21,5 +21,3 @@ I did expect a fairly positive sentiment score upon initially reading the input 
 [https://github.com/cjhutto/vaderSentiment#about-the-scoring](https://github.com/cjhutto/vaderSentiment#about-the-scoring)
 
 [https://realpython.com/python-nltk-sentiment-analysis/](https://realpython.com/python-nltk-sentiment-analysis/)
-
-[https://github.com/tristaneljed/Sentiment-Analysis-Movie-Reviews-NLTK/blob/master/sentiment\_analysis.ipynb](https://github.com/tristaneljed/Sentiment-Analysis-Movie-Reviews-NLTK/blob/master/sentiment_analysis.ipynb)
