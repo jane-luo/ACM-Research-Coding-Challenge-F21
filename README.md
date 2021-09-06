@@ -1,32 +1,25 @@
-# ACM Research Coding Challenge (Fall 2021)
+# **ACM-Research-Coding-Challenge-F21**
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#no-collaboration-policy)No Collaboration Policy
+---
 
-**You may not collaborate with anyone on this challenge.**  You  _are_  allowed to use Internet documentation. If you  _do_  use existing code (either from Github, Stack Overflow, or other sources),  **please cite your sources in the README**.
+For this Python program, I used VADER (Valence Aware Dictionary and sEntiment Reasoner) from the NLTK library to analyze the input file. In order to determine an overall sentiment score, I read in the contents of the input file and passed the contents to the sia.polarity\_scores() method. I also used the word\_tokenize() method to split the text into individual words and determined separate sentiment scores for the first and latter half of the words. Moreover, I separated each sentence of the input file using the sent\_tokenize() method and then determined the sentiment score for each sentence.
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#submission-procedure)Submission Procedure
+The output of the program includes the overall sentiment score (along with the distribution of positive, negative, and neutral scores) of the entire file and a table displaying the individual sentence scores.
 
-Please follow the below instructions on how to submit your answers.
+The overall sentiment score of the text is 0.9982, with the breakdown being *{'neg': 0.065, 'neu': 0.748, 'pos': 0.187, 'compound': 0.9982}*. This score is based on a scale from -1 to +1, with the thresholds for positive, neutral, and negative sentiment specified below:
 
-1.  Create a  **public**  fork of this repo and name it  `ACM-Research-Coding-Challenge-F21`. To fork this repo, click the button on the top right and click the "Fork" button.
+  *1. positive sentiment: compound score >= 0.05*  
+ *2. neutral sentiment: (compound score > -0.05) and (compound score < 0.05)*  
+ *3. negative sentiment: compound score <= -0.05*
 
-2.  Clone the fork of the repo to your computer using  `git clone [the URL of your clone]`. You may need to install Git for this (Google it).
+0.9982 is greater than 0.05, which indicates that this text most likely has a positive sentiment.
 
-3.  Complete the Challenge based on the instructions below.
+I did expect a fairly positive sentiment score upon initially reading the input file, especially due to the positive descriptors used in the latter half of the text, but I was not confident in the strength of the positive descriptors because of the more forceful, negative words in the first half. The analysis of the 1st half and 2nd half of the text does indeed show that the proportion of negative words is higher for the 1st than the 2nd, although both halves still had positive sentiment overall:
 
-4.  Submit your solution by filling out this [form](https://acmutd.typeform.com/to/zF1IcBGR).
+    *1st half sentiment score: {'neg': 0.099, 'neu': 0.76, 'pos': 0.141, 'compound': 0.8766}*  
+ *2nd half sentiment score: {'neg': 0.055, 'neu': 0.731, 'pos': 0.213, 'compound': 0.9968}*
 
-## Assessment Criteria 
-
-Submissions will be evaluated holistically and based on a combination of effort, validity of approach, analysis, adherence to the prompt, use of outside resources (encouraged), promptness of your submission, and other factors. Your approach and explanation (detailed below) is the most weighted criteria, and partial solutions are accepted. 
-
-## [](https://github.com/ACM-Research/Coding-Challenge-S21#question-one)Question One
-
-[Sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) is a natural language processing technique that computes a sentiment score for a body of text. This sentiment score can quantify how positive, negative, or neutral the text is. The following dataset in  `input.txt`  contains a relatively large body of text.
-
-**Determine an overall sentiment score of the text in this file, explain what this score means, and contrast this score with what you expected.**  If your solution also provides different metrics about the text (magnitude, individual sentence score, etc.), feel free to add it to your explanation.   
-
-**You may use any programming language you feel most comfortable. We recommend Python because it is the easiest to implement. You're allowed to use any library/API you want to implement this**, just document which ones you used in this README file. Try to complete this as soon as possible as submissions are evaluated on a rolling basis.
-
-Regardless if you can or cannot answer the question, provide a short explanation of how you got your solution or how you think it can be solved in your README.md file. However, we highly recommend giving the challenge a try, you just might learn something new!
-
+### Sources
+[https://github.com/cjhutto/vaderSentiment#about-the-scoring](https://github.com/cjhutto/vaderSentiment#about-the-scoring)
+[https://realpython.com/python-nltk-sentiment-analysis/](https://realpython.com/python-nltk-sentiment-analysis/)
+[https://github.com/tristaneljed/Sentiment-Analysis-Movie-Reviews-NLTK/blob/master/sentiment\_analysis.ipynb](https://github.com/tristaneljed/Sentiment-Analysis-Movie-Reviews-NLTK/blob/master/sentiment_analysis.ipynb)
