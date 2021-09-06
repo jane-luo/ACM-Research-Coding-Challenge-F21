@@ -13,7 +13,7 @@ def read_file(file_name):
     return contents
 
 
-# Format date for sentence polarity scores in a table
+# Format data for sentence polarity scores in a table
 def create_table():
     i = 0
     sentences = sent_tokenize(read_file("input.txt"))
